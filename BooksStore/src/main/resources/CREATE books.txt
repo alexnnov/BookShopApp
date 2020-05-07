@@ -1,0 +1,7 @@
+CREATE TABLE books (
+	id integer primary key,
+	name varchar(50) not null,
+	price integer not null,
+	warehouse integer not null,
+	number integer
+);

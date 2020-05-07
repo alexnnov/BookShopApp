@@ -1,0 +1,9 @@
+CREATE TABLE purchases (
+	id integer primary key,
+	date date not null,
+	seller integer not null references shops(id),
+	customer integer not null references customers(id),
+	book integer not null references books(id),
+	number integer,
+	summary integer
+);

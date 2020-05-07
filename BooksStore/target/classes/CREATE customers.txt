@@ -1,0 +1,6 @@
+CREATE TABLE customers (
+	id integer primary key,
+	lastname varchar(50) not null,
+	district varchar(50) not null,
+	sale integer
+);
