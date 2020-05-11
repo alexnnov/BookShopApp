@@ -31,6 +31,11 @@ public class ShopsController {
         shopsService.update(shops);
         return ResponseEntity.ok(shops);
     }
+    @PatchMapping("/patch/{id}")
+    public ResponseEntity<Shops> patchShop(@RequestBody Shops shops,@PathVariable("id") String id){
+        shopsService.update(shops);
+        return ResponseEntity.ok(shops);
+    }
 
     @DeleteMapping ("/delete/{id}")
     @ResponseStatus (HttpStatus.NO_CONTENT)

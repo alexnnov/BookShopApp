@@ -33,6 +33,12 @@ public class CustomerController {
         return ResponseEntity.ok(customer);
     }
 
+    @PatchMapping("/patch/{id}")
+    public ResponseEntity<Customer> patchShop(@RequestBody Customer customer,@PathVariable("id") String id){
+        customerService.update(customer);
+        return ResponseEntity.ok(customer);
+    }
+
     @DeleteMapping ("/delete/{id}")
     @ResponseStatus (HttpStatus.NO_CONTENT)
     public void deleteBook(@PathVariable int id) {

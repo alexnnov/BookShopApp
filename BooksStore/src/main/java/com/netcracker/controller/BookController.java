@@ -30,6 +30,11 @@ public class BookController {
         bookService.update(book);
         return ResponseEntity.ok(book);
     }
+    @PatchMapping("/patch/{id}")
+    public ResponseEntity<Book> patchBook(@RequestBody Book book,@PathVariable("id") String id){
+        bookService.update(book);
+        return ResponseEntity.ok(book);
+    }
 
     @DeleteMapping ("/delete/{id}")
     @ResponseStatus (HttpStatus.NO_CONTENT)

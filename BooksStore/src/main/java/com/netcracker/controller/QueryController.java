@@ -1,12 +1,8 @@
 package com.netcracker.controller;
 
 import com.netcracker.entity.*;
-import com.netcracker.repository.PurchaseNameShopRepository;
-import com.netcracker.service.BookNamePriceService;
 import com.netcracker.service.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,9 +18,9 @@ public class QueryController {
     public List<District> findAllDistricts () {
         return queryService.findAllDistricts();
     }
-    @GetMapping ("/mounth/find/all")
-    public List<Mounth> findAllMounths () {
-        return queryService.findAllMounths();
+    @GetMapping ("/month/find/all")
+    public List<Month> findAllMonths () {
+        return queryService.findAllMonths();
     }
     @GetMapping ("/CustomerSale/find/all")
     public List<CustomerSale> findAllCustomerSales (@RequestParam String district) {
@@ -34,11 +30,34 @@ public class QueryController {
     public List<ShopDistrict> findAllShopsFromDistricts () {
         return queryService.findShopsFromDistricts();
     }
-    @GetMapping ("/purchasesWithCustomersAndShops")
-    public List<PurchaseNameShop> finAllPurchases () {
-        return queryService.findAllPurchases();
+    @GetMapping ("/PurchasesWithCustomersAndShops")
+    public List<PurchaseCustomerShop> findAllPurchasesWithCustomersAndShops () {
+        return queryService.findPurchasesWithCustomersAndShops();
     }
-
+    @GetMapping ("/PurchasesWithCustomers")
+    public List<PurchaseCustomer> findAllPurchasesWithCustomers () {
+        return queryService.findPurchasesWithCustomers();
+    }
+    @GetMapping ("/PurchasesWithBooks")
+    public List<PurchaseBook> findAllPurchasesWithBooks () {
+        return queryService.findPurchasesWithBooks();
+    }
+    @GetMapping ("/Task5a")
+    public List<PurchaseCustomer> findTask5a () {
+        return queryService.findTask5a();
+    }
+    @GetMapping ("/Task5b")
+    public List<PurchaseInSameDistrict> findTask5b () {
+        return queryService.findTask5b();
+    }
+    @GetMapping ("/Task5c")
+    public List<Shops> findTask5c () {
+        return queryService.findTask5c();
+    }
+    @GetMapping ("/Task5d")
+    public List<Book> findTask5d () {
+        return queryService.findTask5d();
+    }
 
 
 }

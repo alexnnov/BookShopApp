@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CustomerSaleRepository extends JpaRepository<CustomerSale,Integer> {
 
-    @Query (value = "SELECT DISTINCT id, name, sale FROM purchases p  WHERE p.district = :district", nativeQuery = true)
+    @Query (value = "SELECT DISTINCT id, lastname, sale FROM customer c  WHERE c.district = :district", nativeQuery = true)
     List<CustomerSale> findAllCustomersSales(@Param("district") String district );
 
 }

@@ -30,6 +30,11 @@ public class PurchaseController {
         purchaseService.update(purchase);
         return ResponseEntity.ok(purchase);
     }
+    @PatchMapping("/patch/{id}")
+    public ResponseEntity<Purchase> patchPurchase(@RequestBody Purchase purchase,@PathVariable("id") String id){
+        purchaseService.update(purchase);
+        return ResponseEntity.ok(purchase);
+    }
 
     @DeleteMapping ("/delete/{id}")
     @ResponseStatus (HttpStatus.NO_CONTENT)
